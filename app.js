@@ -16,7 +16,8 @@ var express = require("express"),
     RestDinner = require("./models/restDinnerModel"),
     flash = require("connect-flash");
 
-mongoose.connect('mongodb://localhost:27017/meal_plan', { useNewUrlParser: true });
+//mongoose.connect('mongodb://localhost:27017/meal_plan', { useNewUrlParser: true });
+mongoose.connect('mongodb+srv://degookin:J@cobe11@cluster0-psyky.mongodb.net/mealplanner?retryWrites=true', { useNewUrlParser: true });
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
