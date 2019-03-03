@@ -1,0 +1,25 @@
+<% include ../../partials/header %>
+
+<h1 class="text-center"><%=meal.name%></h1>
+
+<div class="col-md-4"></div>
+
+<div class="container col-md-4 show-imgs">
+    <div class="row thumbnail">
+        <div>
+            <div>
+                <img class="img-responsive" src=<%= meal.image %>>
+            </div>
+        </div>
+    </div>
+    <div>
+        <p><strong>Price: </strong><%= meal.price %></p>
+        <p><strong>Rating: </strong><%= meal.rating %> out of 5</p>
+    </div>
+    <a class="btn btn-sm btn-warning" href="/views/meals/restD/<%= meal._id %>/dinnerEdit">Edit</a>
+    <form class="delete-form inline" action="/views/meals/restD/<%= meal._id %>?_method=DELETE" method="POST">
+        <input type="submit" class="btn btn-sm btn-danger" value="Delete">
+    </form>
+</div>
+
+<% include ../../partials/footer %>

@@ -1,0 +1,32 @@
+<% include ../../partials/header %>
+
+    <div class="container">
+            <div class="jumbotron">
+                <h1><i class="fas fa-carrot"></i> The Meal Planner</h1>
+                <!-- Got this icon from Font Awesome -->
+                <p>So Erin Doesn't Have To Think About Meal Planning</p>
+            </div>
+            
+            <div>
+                <p>
+                    <a class="btn btn-primary btn-large" href="/views/meals/homeL/lunchNew">Add New Meal</a>
+                </p>
+            </div>
+
+            <h1 class="clickme">Lunch @ Home</h1>
+            
+            <% meals.forEach(function(meal){ %>
+            <div class="col-md-3 col-sm-6">
+                <div class="thumbnail breakfast">
+                    <img src="<%= meal.image %>">
+                    <div class="caption">
+                        <h4><strong><%= meal.name %></strong></h4>
+                    </div>
+                    <p>
+                        <a href="/views/meals/homeL/<%= meal._id %>" class="btn btn-primary">More Info</a>
+                    </p>
+                </div>
+            </div>
+        <% }); %>
+        
+<% include ../../partials/footer %>        

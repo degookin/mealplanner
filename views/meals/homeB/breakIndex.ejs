@@ -1,0 +1,58 @@
+<% include ../../partials/header %>
+
+    <div class="container">
+            <div class="jumbotron">
+                <h1><i class="fas fa-carrot"></i> The Meal Planner</h1>
+                <!-- Got this icon from Font Awesome -->
+                <p>So Erin Doesn't Have To Think About Meal Planning</p>
+            </div>
+            
+            <div>
+                <p>
+                    <a class="btn btn-primary btn-large" href="/views/meals/homeB/breakNew">Add New Meal</a>
+                </p>
+                
+            </div>
+
+            <h1 class="clickme">Breakfast @ Home</h1>
+            
+            <% meals.forEach(function(meal){ %>
+            <div class="col-md-3 col-sm-6">
+                <div class="thumbnail breakfast">
+                    <img src="<%= meal.image %>">
+                    <div class="caption">
+                        <h4><strong><%= meal.name %></strong></h4>
+                    </div>
+                    <p>
+                        <a href="/views/meals/homeB/<%= meal._id %>" class="btn btn-primary">More Info</a>
+                    </p>
+                </div>
+            </div>
+        <% }); %>
+
+<p>==================================</p>
+   <h3>Things to add to this app:</h3>
+    <ul>
+        <li>Pics of meals</li>
+        <li>Login and logout for different users</li>
+        <li>Place to enter meals for randomization</li>
+        <li>Way to edit and delete meals from randomization</li>
+        <li>Way to select veggie or meat options or all</li>
+        <li>Clickable randomizer button</li>
+        <li>Way to display random selection</li>
+        <li>Eat In or Out?</li>
+        <li>List all meals on New page so don't add dupes</li>
+        <li>Breakfast, Lunch, Dinner?</li>
+    </ul>
+    
+    <p>==================================</p>
+
+<script>
+    $( ".clickme" ).on('click', function() {
+        $( ".breakfast" ).toggle( "slow", function() {
+    // Animation complete.
+     });
+    });
+</script>
+  
+<% include ../../partials/footer %>

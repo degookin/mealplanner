@@ -1,0 +1,46 @@
+<% include ../../partials/header %>
+
+
+    
+    <div class="container">
+            <div class="jumbotron">
+                <h1><i class="fas fa-carrot"></i> The Meal Planner</h1>
+                <p>So Erin Doesn't Have To Think About Meal Planning</p>
+            </div>
+            
+            <div>
+                <p>
+                    <a class="btn btn-primary btn-large" href="/views/meals/restB/breakNew">Add New Meal</a>
+                </p>
+            </div>
+
+            <h1 class="clickme">Breakfast Restaurants</h1>
+            
+            <% meals.forEach(function(meal){ %>
+            <div class="col-md-3 col-sm-6">
+                <div class="thumbnail breakfast">
+                    <img src="<%= meal.image %>">
+                    <div class="caption">
+                        <h4><strong><%= meal.name %></strong></h4>
+                        <p class="price"><%= meal.price %></p>
+                        <p class="rating"><%= meal.rating %> out of 5</p>
+                    </div>
+                        
+                    <p>
+                        <a href="/views/meals/restB/<%= meal._id %>" class="btn btn-primary">More Info</a>
+                    </p>
+                </div>
+            </div>
+        <% }); %>
+
+        
+
+<script>
+    $( ".clickme" ).on('click', function() {
+        $( ".breakfast" ).toggle( "slow", function() {
+    // Animation complete.
+     });
+    });
+</script>
+  
+<% include ../../partials/footer %>

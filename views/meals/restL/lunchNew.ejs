@@ -1,0 +1,35 @@
+<% include ../../partials/header %>
+
+<div class="container">
+    <div class="row">
+        <h1 style="text-align: center">Add a Lunch Restaurant</h1>
+        <div style="width: 30%; margin: 25px auto;">
+            <form action="/meals/restL/lunchIndex" method="POST">
+                <div class="form-group">
+                    <input class="form-control" type="text" name="type" placeholder="lunch">
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="text" name="name" placeholder="name">
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="text" name="image" placeholder="image url">
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="text" name="category" placeholder="mexican, wings, etc.">
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="text" name="price" placeholder="$, $$, $$$">
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="text" name="rating" placeholder="Out of 5">
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-lg btn-primary btn-block">Submit!</button>
+                </div>
+            </form>
+            <a href="/views/meals/restL/lunchIndex">Go Back</a>
+        </div>
+    </div>
+</div>
+
+<% include ../../partials/footer %>
